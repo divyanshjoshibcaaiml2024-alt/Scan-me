@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Gunnu ❤️</title>
+
+<style>
+body{
+margin:0;
+font-family:Arial,sans-serif;
+background:linear-gradient(180deg,#ff5fa2,#ff9c52);
+display:flex;
+justify-content:center;
+align-items:center;
+min-height:100vh;
+overflow:hidden;
+}
+
+.card{
+width:90%;
+max-width:500px;
+background:rgba(255,255,255,0.12);
+backdrop-filter:blur(10px);
+padding:30px;
+border-radius:30px;
+text-align:center;
+color:white;
+box-shadow:0 10px 30px rgba(0,0,0,.15);
+}
+
+h1{
+font-size:48px;
+margin-bottom:10px;
+}
+
+p{
+font-size:22px;
+line-height:1.8;
+}
+
+.btn{
+padding:15px 35px;
+border:none;
+border-radius:40px;
+font-size:22px;
+cursor:pointer;
+margin:10px;
+}
+
+.yes{
+background:white;
+color:#ff2d75;
+}
+
+.no{
+background:white;
+color:#444;
+position:relative;
+}
+
+#success{
+display:none;
+}
+
+img{
+width:250px;
+border-radius:20px;
+margin-top:20px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="card" id="proposal">
+
+<h1>Will you forever be mine? ❤️</h1>
+
+<h2>Gunnu 💖</h2>
+
+<p>
+Emm you were waiting for me to propose you haan.....here we go.....i am finally ready and confirmed that i can proceed my rest of the life with you....only with you❤️
+<br><br>
+Everyday i am falling more and more for you.....i love youuuu sooo much....will you be mine ?
+<br><br>
+"My life makes perfect sense simply because you are in it. Will you be my forever?"
+</p>
+
+<h3>— Divyansh ❤️</h3>
+
+<button class="btn yes" onclick="accepted()">Yes ❤️</button>
+<button class="btn no" id="noBtn">No 😶</button>
+
+</div>
+
+<div class="card" id="success">
+<h1>Yay! I knew you'd say YES! 💖</h1>
+
+<p>
+You're the most amazing person I know.
+I love you endlessly.
+</p>
+
+<h2>— Divyansh ❤️</h2>
+
+<img src="https://media.tenor.com/4L7D6M6K4qUAAAAC/cute-cat.gif">
+</div>
+
+<script>
+
+const noBtn=document.getElementById("noBtn");
+
+noBtn.addEventListener("mouseover",()=>{
+const x=Math.random()*250-125;
+const y=Math.random()*250-125;
+noBtn.style.transform=`translate(${x}px,${y}px)`;
+});
+
+function accepted(){
+document.getElementById("proposal").style.display="none";
+document.getElementById("success").style.display="block";
+}
+
+</script>
+
+</body>
+</html>
