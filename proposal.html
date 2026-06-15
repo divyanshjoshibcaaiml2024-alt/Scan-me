@@ -15,42 +15,67 @@ justify-content:center;
 align-items:center;
 min-height:100vh;
 overflow:hidden;
+padding:20px;
+box-sizing:border-box;
 }
 
 .card{
-width:90%;
+width:100%;
 max-width:500px;
 background:rgba(255,255,255,0.12);
 backdrop-filter:blur(10px);
-padding:30px;
+padding:30px 20px;
 border-radius:30px;
 text-align:center;
 color:white;
 box-shadow:0 10px 30px rgba(0,0,0,.15);
+overflow-y:auto;
+max-height:90vh;
 }
 
 h1{
-font-size:48px;
-margin-bottom:10px;
+font-size:2.5rem;
+margin:15px 0 10px 0;
+word-wrap:break-word;
+}
+
+h2{
+font-size:1.5rem;
+margin:10px 0;
+}
+
+h3{
+font-size:1.2rem;
+margin:15px 0;
 }
 
 p{
-font-size:22px;
-line-height:1.8;
+font-size:1.1rem;
+line-height:1.6;
+margin:10px 0;
+word-wrap:break-word;
 }
 
 .btn{
-padding:15px 35px;
+padding:12px 25px;
 border:none;
 border-radius:40px;
-font-size:22px;
+font-size:1rem;
 cursor:pointer;
-margin:10px;
+margin:8px 5px;
+transition:all 0.3s ease;
+display:inline-block;
+font-weight:bold;
 }
 
 .yes{
 background:white;
 color:#ff2d75;
+}
+
+.yes:hover{
+transform:scale(1.05);
+box-shadow:0 5px 15px rgba(0,0,0,.2);
 }
 
 .no{
@@ -59,14 +84,50 @@ color:#444;
 position:relative;
 }
 
+.no:hover{
+transform:scale(1.05);
+}
+
 #success{
 display:none;
 }
 
 img{
-width:250px;
+width:min(250px, 80vw);
 border-radius:20px;
 margin-top:20px;
+}
+
+.button-container{
+margin:20px 0;
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+}
+
+@media (max-width:480px){
+h1{
+font-size:2rem;
+}
+
+h2{
+font-size:1.2rem;
+}
+
+p{
+font-size:1rem;
+}
+
+.btn{
+padding:10px 20px;
+font-size:0.9rem;
+margin:5px 3px;
+}
+
+.card{
+padding:20px 15px;
+}
 }
 </style>
 </head>
@@ -89,8 +150,10 @@ Everyday i am falling more and more for you.....i love youuuu sooo much....will 
 
 <h3>— Divyansh ❤️</h3>
 
+<div class="button-container">
 <button class="btn yes" onclick="accepted()">Yes ❤️</button>
 <button class="btn no" id="noBtn">No 😶</button>
+</div>
 
 </div>
 
@@ -104,7 +167,7 @@ I love you endlessly.
 
 <h2>— Divyansh ❤️</h2>
 
-<img src="https://media.tenor.com/4L7D6M6K4qUAAAAC/cute-cat.gif">
+<img src="https://media.tenor.com/4L7D6M6K4qUAAAAC/cute-cat.gif" alt="Celebration">
 </div>
 
 <script>
