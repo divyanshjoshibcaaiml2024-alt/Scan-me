@@ -15,10 +15,12 @@ justify-content:center;
 align-items:center;
 min-height:100vh;
 overflow:hidden;
+padding:20px;
+box-sizing:border-box;
 }
 
 .card{
-width:90%;
+width:100%;
 max-width:500px;
 background:rgba(255,255,255,0.12);
 backdrop-filter:blur(10px);
@@ -30,7 +32,7 @@ box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 
 h1{
-font-size:42px;
+font-size:2.5rem;
 margin-bottom:30px;
 }
 
@@ -48,15 +50,34 @@ height:300px;
 }
 
 p{
-font-size:18px;
+font-size:1.1rem;
 line-height:1.8;
 margin-top:30px;
 }
 
 .footer{
 margin-top:30px;
-font-size:16px;
+font-size:1rem;
 opacity:0.9;
+}
+
+@media (max-width:480px){
+h1{
+font-size:2rem;
+}
+
+.card{
+padding:25px;
+}
+
+.qr-container img{
+width:250px;
+height:250px;
+}
+
+p{
+font-size:1rem;
+}
 }
 </style>
 </head>
@@ -68,7 +89,7 @@ opacity:0.9;
 <h1>Scan Me! 💕</h1>
 
 <div class="qr-container">
-<img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://divyanshjoshibcaaiml2024-alt.github.io/Scan-me/proposal.html" alt="QR Code">
+<img src="https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=https://raw.githubusercontent.com/divyanshjoshibcaaiml2024-alt/Scan-me/main/proposal.html" alt="QR Code">
 </div>
 
 <p>
