@@ -44,7 +44,7 @@ display:inline-block;
 box-shadow:0 5px 20px rgba(0,0,0,.2);
 }
 
-.qr-container img{
+.qr-container canvas{
 width:300px;
 height:300px;
 }
@@ -82,13 +82,6 @@ font-size:1rem;
 opacity:0.9;
 }
 
-.url-display{
-margin-top:20px;
-font-size:0.9rem;
-word-break:break-all;
-opacity:0.8;
-}
-
 @media (max-width:480px){
 h1{
 font-size:2rem;
@@ -98,7 +91,7 @@ font-size:2rem;
 padding:25px;
 }
 
-.qr-container img{
+.qr-container canvas{
 width:250px;
 height:250px;
 }
@@ -117,7 +110,7 @@ font-size:1rem;
 <h1>Scan Me! 💕</h1>
 
 <div class="qr-container">
-<img id="qr-code" src="" alt="QR Code">
+<canvas id="qrcode"></canvas>
 </div>
 
 <p>
@@ -128,27 +121,25 @@ Point your camera at this QR code and tap the notification to open your special 
 
 <a href="proposal.html" class="direct-link">Open Proposal 💕</a>
 
-<div class="url-display" id="url-display"></div>
-
 <div class="footer">
 — From Divyansh ❤️
 </div>
 
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
-// Get the full URL of the proposal page
-const proposalURL = window.location.origin + window.location.pathname.replace('index.html', '') + 'proposal.html';
+// Generate QR code
+const proposalURL = 'https://divyanshjoshibcaaiml2024-alt.github.io/Scan-me/proposal.html';
 
-// Create QR code using the full URL
-const qrCodeURL = 'https://api.qrserver.com/v1/create-qr-code/?size=300x300&data=' + encodeURIComponent(proposalURL);
-
-// Set the QR code image
-document.getElementById('qr-code').src = qrCodeURL;
-document.getElementById('url-display').textContent = 'QR links to: ' + proposalURL;
-
-console.log('QR Code URL:', qrCodeURL);
-console.log('Proposal URL:', proposalURL);
+new QRCode(document.getElementById("qrcode"), {
+  text: proposalURL,
+  width: 300,
+  height: 300,
+  colorDark: "#000000",
+  colorLight: "#ffffff",
+  correctLevel: QRCode.CorrectLevel.H
+});
 </script>
 
 </body>
