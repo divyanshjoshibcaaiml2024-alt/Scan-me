@@ -92,10 +92,29 @@ transform:scale(1.05);
 display:none;
 }
 
-img{
-width:min(250px, 80vw);
-border-radius:20px;
-margin-top:20px;
+.image-gallery{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:10px;
+margin:20px 0;
+}
+
+.gallery-img{
+width:100%;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.2);
+transition:transform 0.3s ease;
+cursor:pointer;
+}
+
+.gallery-img:hover{
+transform:scale(1.05);
+}
+
+.single-img{
+grid-column:1 / -1;
+max-width:80%;
+margin:0 auto;
 }
 
 .button-container{
@@ -127,6 +146,10 @@ margin:5px 3px;
 
 .card{
 padding:20px 15px;
+}
+
+.image-gallery{
+grid-template-columns:1fr;
 }
 }
 </style>
@@ -165,9 +188,15 @@ You're the most amazing person I know.
 I love you endlessly.
 </p>
 
-<h2>— Divyansh ❤️</h2>
+<div class="image-gallery">
+<img src="https://divyanshjoshibcaaiml2024-alt.github.io/Scan-me/images/couple1.png" alt="Our moment 1" class="gallery-img">
+<img src="https://divyanshjoshibcaaiml2024-alt.github.io/Scan-me/images/couple2.png" alt="Our moment 2" class="gallery-img">
+<img src="https://divyanshjoshibcaaiml2024-alt.github.io/Scan-me/images/couple3.png" alt="Our moment 3" class="gallery-img">
+<img src="https://divyanshjoshibcaaiml2024-alt.github.io/Scan-me/images/couple4.png" alt="Our moment 4" class="gallery-img">
+<img src="https://divyanshjoshibcaaiml2024-alt.github.io/Scan-me/images/couple5.png" alt="Our moment 5" class="gallery-img single-img">
+</div>
 
-<img src="https://media.tenor.com/4L7D6M6K4qUAAAAC/cute-cat.gif" alt="Celebration">
+<h2>— Divyansh ❤️</h2>
 </div>
 
 <script>
